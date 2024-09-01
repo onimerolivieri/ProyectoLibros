@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block titulo %}Resultados de la Búsqueda{% endblock %}
+
+{% block contenido %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Resultados de la Búsqueda</h2>
+    {% if query %}
+        <div class="alert alert-info text-center">
+            <strong>Resultados para:</strong> "{{ query }}"
+        </div>
+        {% if resultados %}
+            <ul class="list-group">
+                {% for libro in resultados %}
+                    <li class="list-group-item">
+                        <i class="fas fa-book"></i> {{ libro.titulo }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <div class="alert alert-warning text-center mt-4">
+                No se encontraron resultados.
+            </div>
+        {% endif %}
+    {% else %}
+        <div class="alert alert-danger text-center mt-4">
+            Por favor, ingresa un término de búsqueda.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

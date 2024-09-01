@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block titulo %} Inicio {% endblock %}
+
+{% block contenido %}
+
+<div class="row align-items-md-stretch justify-content-center">
+    <div class="col-md-8">
+        <div class="h-100 p-5 text-white bg-primary border rounded-3 shadow-lg text-center">
+            <i class="fas fa-book fa-5x mb-4"></i>
+            <h2>Bienvenidos a mi Librería</h2>
+            <p>
+                Este sitio contiene una colección de todos los libros que he leído a lo largo de mi vida. 
+                Explora mis recomendaciones y encuentra tu próxima gran lectura.
+            </p>
+            <!--form id="searchForm" method="GET" action="{% url 'buscar' %}" class="d-flex mb-4">
+                <input class="form-control me-2" type="search" placeholder="Buscar libros" aria-label="Buscar" name="q" id="searchInput" required>
+                <button class="btn btn-outline-light" type="submit">Buscar</button>
+            </form-->
+            <p id="warningMessage" class="text-warning" style="display: none;">Por favor, introduce un término de búsqueda.</p>
+            <a href="{% url 'libros' %}" class="btn btn-outline-light mt-3">
+                Ver Libros
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+    
